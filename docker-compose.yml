@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ttdl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ttdl-server
+    environment:
+      - NODE_ENV=production
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command: yarn apps/web/start
